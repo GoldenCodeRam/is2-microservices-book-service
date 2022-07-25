@@ -13,6 +13,9 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/book', 'BookController@index');
+$router->get('/book/{id}', 'BookController@show');
+$router->post('/book', 'BookController@store');
+$router->put('/book/{id}', 'BookController@update');
+$router->patch('/book/{id}', 'BookController@update');
+$router->delete('/book/{id}', 'BookController@delete');
